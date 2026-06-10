@@ -1,99 +1,79 @@
+<?php
+
+    require 'fungsi.php';
+    $qmahasiswa = "SELECT * FROM mahasiswa";
+    $mahasiswas = tampildata($qmahasiswa); ///menghasilkan data dalam wadah
+
+    //$result = mysqli_query($koneksi, $query);///
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INPUT DATA | DATA MAHASISWA</title>    
+    <title>Data Mahasiswa | WEB INFORMATIKA 2026</title>
 </head>
- <link rel="stylesheet" href="assets/style.css">
 <body>
-        </title>
-    </head>
-    <body>
-        <h1>
+      <h1>
             WEB INFORMATIKA-ZULFA
+        </h1>
         <hr>
         <table border="1" cellspacing="0" cellpadding="10px">
             <tr>
                 <td>
-                    <a href= "index.php">HOME</a></td>
+                    <a href="index.php">Home</a>
+                </td>
                 <td>
-                     <a href= "profile.php">PROFILE</a></td>
+                    <a href="profile.php">Profile</a>
+                </td>
                 <td>
-                     <a href= "kontak.php">KONTAK</a></td>
-                <td >
-                    <a href="mahasiswa.php">MAHASISWA</a></td>
+                    <a href="contact.php">Kontak</a>
+                </td> 
+                <td>
+                    <a href="mahasiswa.php">Data Mahasiswa</a>
+                </td>   
             </tr>
         </table>
-        <h3>DATA MAHASISWA</h3>
+        <h3>Data Mahasiswa</h3>
         <a href="inputdata.php">
             <button>Tambah Data</button>
         </a>
         <br>
         <br>
-        <TABLE border="1" cellspacing="0" cellpadding="5px">
+        <table border="1" cellpadding="5px">
             <tr>
-                <th  rowspan="2" align="center">No</th>
-                <th rowspan="2" align="center">Nama</th>
-                <th colspan="3" align="center">Nilai</th>
-                <th rowspan="2" align="center">Foto</th>
-                <!-- <td>Baris 1, kolom 2</td> -->
+                <th >No</th>
+                <th >Nama</th>
+                <th >NIM</th>
+                <th >Jurusan</th>
+                <th >Email</th>
+                <th >No. HP</th>
+                <th >Foto</th>
+                <th >Aksi</th>
             </tr>
+            <?php
+            $no = 1;
+                foreach($mahasiswas as $mhs)
+                {
+            ?>
             <tr>
-                <td align="center">UTS</td>
-                 <td align="center">UAS</td>
-                  <td align="center">TUGAS</td>
+                <td align="center"><?= $no ?></td>
+                <td><?php echo $mhs[1] ?></td>
+                <td align="center"><?= $mhs[2] ?></td>
+                <td align="center"><?= $mhs[3] ?></td>
+                <td align="center"><?= $mhs[4] ?></td>
+                <td ><?= $mhs[5] ?></td>
+                <td><img src="aset/images/<?= $mhs[6] ?>" width="70px" height="70px"/></td>
+                 <td>
+                    <a href="uabhdata.php" style=""><button>Edit</button></a> <a href="hapusdata.php"><button>Hapus</button></a>
+                </td>
             </tr>
-            <tr>
-                 <td align="center">1</td>
-                <td align="center">Yesaya Abraham</td>
-                <td align="center">77</td>
-                 <td align="center">90</td>
-                 <td align="center">89</td>
-                 <td> <img src="assets/image/yesaya.jpg" alt=""></td>
-            </tr>
-            <tr>
-                <td align="center">2</td>
-                <td align="center">Rose Blacpink</td>
-                <td align="center">88</td>
-                 <td align="center">93</td>
-                 <td align="center">100</td>
-                 <td> <img src="https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2026/03/04/1772604291065_rose-toc-tay-1772524869402.jpeg" width="200px" ></td>
-            </tr>
-             <tr>
-                <td align="center">3</td>
-                <td align="center">Justin Bieber</td>
-                <td align="center">90</td>
-                 <td align="center">99</td>
-                 <td align="center">86</td>
-                 <td> <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Justin_Bieber_in_2015.jpg" width="200px"></td>
-            </tr>
-
-        </TABLE>
-        <hr>
-        <h3>Latihan</h3>
-        <table border="1" cellpading="0" cellpadding="10px">
-            <tr>
-                <td>1,1</td>
-                <td>1,2</td>
-                <td>1,3</td>
-                <td>1,4</td>
-            </tr>
-            <tr>
-                <td>2,1</td>
-                <td colspan="2" rowspan="2" align="center">?</td>
-                <td>2,4</td>
-            <tr>
-                <td>3,1</td>
-                <td>3,4</td>
-            </tr>    
-                <tr>
-                <td>4,1</td>
-                <td>4,2</td>
-                <td>4,3</td>
-                <td>4,4</td>
-            </tr>
-            </tr>
+            <?php
+            $no++;
+                }
+            ?>
         </table>
 </body>
 </html>
