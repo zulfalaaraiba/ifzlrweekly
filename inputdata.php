@@ -5,17 +5,21 @@ if(isset($_POST["kirim"]))
        
        if(tambahdata($_POST)>0)
         {
-        echo "<script>
-          alert('Data Berhasil Ditambahkan!);
-          window.location.href='mahasiswa.php';
-          <script>";
+      echo "
+        <script>
+        alert('Data Berhasil Ditambahkan!');
+        window.location.href='mahasiswa.php';
+        </script>
+        ";
         }
     else 
     {
-        echo "<script>
-          alert('Data gagal Ditambahkan!);
-          window.location.href='mahasiswa.php';
-          <script>";
+        echo "
+        <script>
+        alert('Data Gagal Ditambahkan!');
+        window.location.href='mahasiswa.php';
+        </script>
+        ";
     }
 }
 ?>     
@@ -52,39 +56,39 @@ if(isset($_POST["kirim"]))
                         <tr>
                             <td><label for="nama">Nama</label></td>
                             <td>:</td>
-                            <td><input type="text" nama="nama" id="nama"/></td>
+                            <td><input type="text" name ="nama" id="nama"/>
                         </tr>
                          <tr>
                             <td><label for="nim">nim</label></td>
                             <td>:</td>
-                            <td><input type="number" nama="nim"  id="nim"/></td>
+                            <td><input type="number" name="nim"  id="nim"/></td>
                         </tr>
                          <tr>
                             <td><label for="jurusan">jurusan</label></td>
                             <td>:</td>
-                            <td><input type="text" nama="jurusan"  id="jurusan"/></td>
+                            <td><input type="text" name="jurusan"  id="jurusan"/></td>
                         </tr>
                         <tr>
                             <td><label for="email">Email</label></td>
                             <td>:</td>
-                            <td><input type="text" nama="email"  id="email"/></td>
+                            <td><input type="text" name="email"  id="email"/></td>
                         </tr>
                         <tr>
                             <td><label for="no_hp">no_hp</label></td>
                             <td>:</td>
-                            <td><input type="number" nama="no_hp"  id="no_hp"/></td>
+                            <td><input type="number" name="no_hp"  id="no_hp"/></td>
                         </tr>
             
                          <tr>
                             <td><label for="Foto">foto</label></td>
                             <td>:</td>
-                            <td><input type="text" nama="foto" id="foto"></td>
+                            <td><input type="file" name="foto"></td>
                         </tr>
                     </table>
                  <tr>
                             <table>
                                 <br>
-                                <input type="submit" nama="kirim" value="kirim">
+                                <input type="submit" name="kirim" value="kirim">
                             </table>
                         </tr>
 

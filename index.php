@@ -29,9 +29,9 @@
         <div class="hero-card">
 
             <h1>Selamat Datang 👋</h1>
-
+        
             <p class="hero-subtitle">
-                Website Portofolio Mahasiswa Informatika
+                 Portofolio Mahasiswa Informatika
             </p>
 
             <p class="hero-description">
