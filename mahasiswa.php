@@ -68,7 +68,7 @@ $mahasiswas = tampildata($qmahasiswa);
             <td><?= $mhs[5]; ?></td>
 
             <td align="center">
-                <img src="assets/images/<?= $mhs[6]; ?>"
+                <img src="assets/image/<?= $mhs[6]; ?>"
                      width="70"
                      height="70"
                      alt="Foto Mahasiswa">
@@ -80,7 +80,7 @@ $mahasiswas = tampildata($qmahasiswa);
                     <button>Edit</button>
                 </a>
 
-                <a href="hapusdata.php?id=<?= $mhs[0]; ?>"
+                <a href="hapusdata.php?id=<?= $mhs[0]; ?> "
                    onclick="return confirm('Yakin ingin menghapus data ini?')">
                     <button>Hapus</button>
                 </a>
